@@ -10,7 +10,7 @@ export default function Root() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (isAuthenticated) {
+      if (!isAuthenticated) {
         router.replace(ERouteTable.HOME)
       } else {
         router.replace(ERouteTable.ONBOARD)

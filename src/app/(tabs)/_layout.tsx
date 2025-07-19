@@ -1,77 +1,74 @@
 import React from 'react'
 import { Tabs } from 'expo-router'
-import { Text, View } from 'react-native'
-import { Home3, Flashy, TableDocument, Profile } from 'iconsax-react-native'
+import { View } from 'react-native'
+import { Home2, Magicpen, Wallet3, ReceiptEdit, NotificationBing } from 'iconsax-react-native'
+import { clsx } from 'clsx'
 
-type TabIconProps = {
-  name: string
-  Icon: React.ElementType
-  focused: boolean
-  color: string
-  size?: number
+const icons = {
+  home: Home2,
+  wallet: Wallet3,
+  transaction: ReceiptEdit,
+  notify: NotificationBing,
+  chatbot: Magicpen,
 }
 
-const TabIcon = ({ name, color, focused, Icon, size = 24 }: TabIconProps) => {
+type TabIconProps = {
+  Icon: React.ElementType
+  focused: boolean
+}
+
+const TabIcon = ({ Icon, focused }: TabIconProps) => {
   return (
-    <View className="flex-1 pt-1 items-center gap-1">
-      <Icon size={size} color={color} variant="Broken" />
-      <Text style={{ color }} className={`${focused ? 'font-semibold' : 'font-medium'} text-xs`}>
-        {name}
-      </Text>
+    <View
+      className={clsx(
+        'w-14 mt-8 aspect-square rounded-full items-center justify-center',
+        focused ? 'bg-white dark:bg-zinc-900' : '',
+      )}
+    >
+      <Icon
+        size={24}
+        color={focused ? '#0F172A' : '#CBD5E1'}
+        variant={focused ? 'Bold' : 'Outline'}
+      />
     </View>
   )
 }
 
-const TabsLayout = () => {
+export default function TabsLayout() {
   return (
-    <>
-      <Tabs
-        screenOptions={{
-          tabBarShowLabel: false,
-          headerShown: false,
-          tabBarActiveTintColor: '#00CEE6',
-          tabBarInactiveTintColor: '#71717A',
-          tabBarStyle: {
-            backgroundColor: '#27272A',
-            height: 60,
-          },
-        }}
-      >
-        <Tabs.Screen
-          name="home"
-          options={{
-            title: 'Home',
-            headerShown: false,
-            tabBarIcon: (props) => <TabIcon name="Home" Icon={Home3} {...props} />,
-          }}
-        />
-
-        <Tabs.Screen
-          name="lesson"
-          options={{
-            title: 'Lesson',
-            tabBarIcon: (props) => <TabIcon name="Home" Icon={Flashy} {...props} />,
-          }}
-        />
-
-        <Tabs.Screen
-          name="news"
-          options={{
-            title: 'News',
-            tabBarIcon: (props) => <TabIcon name="Home" Icon={TableDocument} {...props} />,
-          }}
-        />
-
-        <Tabs.Screen
-          name="profile"
-          options={{
-            title: 'Profile',
-            tabBarIcon: (props) => <TabIcon name="Home" Icon={Profile} {...props} />,
-          }}
-        />
-      </Tabs>
-    </>
+    <Tabs
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          position: 'absolute',
+          bottom: 20,
+          marginLeft: 52,
+          marginRight: 52,
+          height: 64,
+          borderRadius: 999,
+          backgroundColor: '#1F2937',
+          borderTopWidth: 0,
+          elevation: 10,
+          shadowColor: '#000',
+          shadowOpacity: 0.1,
+          shadowRadius: 8,
+          shadowOffset: { width: 0, height: 3 },
+        },
+        tabBarItemStyle: {
+          alignSelf: 'center',
+        },
+        tabBarIcon: ({ focused }) => {
+          const Icon = icons[route.name as keyof typeof icons]
+          return <TabIcon Icon={Icon} focused={focused} />
+        },
+      })}
+    >
+      <Tabs.Screen name="home" options={{ title: 'Home' }} />
+      <Tabs.Screen name="wallet" options={{ title: 'Wallet' }} />
+      <Tabs.Screen name="transaction" options={{ title: 'Transaction' }} />
+      <Tabs.Screen name="notify" options={{ title: 'Notify' }} />
+      <Tabs.Screen name="chatbot" options={{ title: 'Chatbot' }} />
+    </Tabs>
   )
 }
-
-export default TabsLayout
