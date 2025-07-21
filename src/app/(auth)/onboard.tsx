@@ -1,7 +1,7 @@
 import { Image, ImageBackground, SafeAreaView, StatusBar, Text, View } from 'react-native'
 import React from 'react'
 import { images } from '@/constants'
-import AppButton from '@/components/AppButton'
+import AppButton from '@/components/common/AppButton'
 import { useRouter } from 'expo-router'
 import { ERouteTable } from '@/constants/route-table'
 

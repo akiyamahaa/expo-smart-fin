@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import IcGoogle from './icons/IcGoogle'
+import IcGoogle from '../icons/IcGoogle'
 
 type Props = {
   title: string

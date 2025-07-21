@@ -6,5 +6,9 @@ export enum ERouteTable {
   VERIFY_EMAIL = '/verify',
   USER_INFO = '/user-information',
   HOME = '/home',
+  WALLET = '/wallet',
   SPLASH = '/splash',
+
+  WALLET_DETAIL = '/wallet-detail',
+  CREATE_WALLET = '/create-wallet',
 }
