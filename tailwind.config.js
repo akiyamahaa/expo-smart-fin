@@ -27,6 +27,7 @@ module.exports = {
         'transparent-primary': '#9075FF14',
         'transparent-error': '#F4433614',
         'input-outline': '#919EAB52',
+        'component-divider': '#919EAB3D',
       },
     },
   },

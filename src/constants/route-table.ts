@@ -11,4 +11,5 @@ export enum ERouteTable {
 
   WALLET_DETAIL = '/wallet-detail',
   CREATE_WALLET = '/create-wallet',
+  CREATE_WALLET_FORM = '/create-wallet-form',
 }

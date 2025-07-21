@@ -1,3 +1,4 @@
+// @@iconify-code-gen
 import { Stack } from 'expo-router'
 import '~/global.css' // Tailwind / NativeWind globals
 import { QueryProvider } from '@/context/QueryProvider'

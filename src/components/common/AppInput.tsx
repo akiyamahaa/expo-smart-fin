@@ -4,12 +4,17 @@ import { TextInput, TextInputProps, View, Text } from 'react-native'
 type AppInputProps = TextInputProps & {
   label?: string
   error?: string
+  required?: boolean
 }
 
-const AppInput: React.FC<AppInputProps> = ({ label, error, ...rest }) => {
+const AppInput: React.FC<AppInputProps> = ({ label, error, required, ...rest }) => {
   return (
     <View className="mb-4">
-      {label && <Text className="text-sm font-normal text-primary ml-3 mb-1.5">{label}</Text>}
+      {label && (
+        <Text className="text-sm font-normal text-primary ml-3 mb-1.5">
+          {label} {required && <Text className="text-red-500">*</Text>}
+        </Text>
+      )}
 
       <TextInput
         className={`

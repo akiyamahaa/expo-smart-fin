@@ -8,6 +8,7 @@ type Props = {}
 const ListWalletCard = (props: Props) => {
   return (
     <View className="gap-2">
+      <WalletCard balance={50000} />
       <WalletCard name="VP Bank" logo={'https://api.vietqr.io/img/VPB.png'} balance={50000} />
       <WalletCard name="ACB" logo={'https://api.vietqr.io/img/ACB.png'} balance={50000} />
 
@@ -17,5 +18,3 @@ const ListWalletCard = (props: Props) => {
 }
 
 export default ListWalletCard
-
-const styles = StyleSheet.create({})
