@@ -3,7 +3,7 @@ import React from 'react'
 import { useAuthStore } from '@/modules/auth/store/useAuthStore'
 import AppHeader from '@/components/common/AppHeader'
 import WelcomeUser from '@/components/home/WelcomeUser'
-import WalletHome from '@/modules/wallet/components/WalletHome'
+import WalletHome from '@/components/home/WalletHome'
 import ListButtonAction from '@/components/home/ListButtonAction'
 
 const Home = () => {

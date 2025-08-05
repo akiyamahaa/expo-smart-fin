@@ -1,7 +1,7 @@
 import { Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import GoogleButton from '@/components/common/GoogleButton'
-import AppInput from '@/components/common/AppInput'
+import AppInput from '@/components/form/AppInput'
 import AppButton from '@/components/common/AppButton'
 import { useRouter } from 'expo-router'
 import { ERouteTable } from '@/constants/route-table'

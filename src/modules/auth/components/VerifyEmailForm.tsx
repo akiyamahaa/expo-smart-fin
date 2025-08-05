@@ -3,7 +3,7 @@ import React from 'react'
 import AppButton from '@/components/common/AppButton'
 import { useRouter } from 'expo-router'
 import { ERouteTable } from '@/constants/route-table'
-import OtpInput from '@/components/common/OtpInput'
+import OtpInput from '@/components/form/OtpInput'
 import { ArrowLeft2 } from 'iconsax-react-native'
 
 type Props = {}

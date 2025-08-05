@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native'
 import React from 'react'
-import AppInput from '../common/AppInput'
+import AppInput from '../form/AppInput'
 import AppIconify, { AppIcons } from '../common/AppIcontify'
 import AppButton from '../common/AppButton'
 
